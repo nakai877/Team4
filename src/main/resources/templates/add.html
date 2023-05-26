@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1 th:text="${title}"></h1>
+	<form method="get" action="#" th:action="@{/confirm}" th:object="${input}">
+		
+		<p>名前：<input type="text" name="name" th:value="*{name}"></p>
+		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">エラーメッセージ</div>
+		<p>1日の予定：<input type="text" name="list" th:value="*{list}"></p>
+		<div th:if="${#fields.hasErrors('list')}" th:errors="*{list}">エラーメッセージ</div>
+		
+		<input type="submit" value="確定">
+		
+	</form>
+</body>
+</html>

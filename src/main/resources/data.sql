@@ -1,0 +1,1 @@
+INSERT INTO sample (name, list) VALUES ('山田太郎', 'メールチェック');
