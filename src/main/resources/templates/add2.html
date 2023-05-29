@@ -7,6 +7,7 @@
 </head>
 
 <body>
+	<h1 th:text="検索フォーム"></h1>
 	<form method="get" action="#" th:action="@{/roster}" th:object="${input2}">
 
 		<p>名前：<input type="text" name="name" th:value="*{name}"></p>
