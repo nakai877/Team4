@@ -89,6 +89,32 @@ public class SampleDao {
 		//Controllerに渡す
 		return resultDb2;
 	}
+	public List<EntForm> selectOne(String name) {
+
+		//データベースから目的の1件を取り出して、そのままresultDB1に入れる
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM sample where name=?", name);
+
+		//画面に表示しやすい形のList(resultDB2)を用意
+		List<EntForm> resultDb2 = new ArrayList<EntForm>();
+
+		//1件ずつピックアップ
+		for (Map<String, Object> result1 : resultDb1) {
+
+			//データ1件分を1つのまとまりとするので、EntForm型の「entformdb」を生成
+			EntForm entformdb = new EntForm();
+
+			//id、nameのデータをentformdbに移す
+			entformdb.setId((int) result1.get("id"));
+			entformdb.setName((String) result1.get("name"));
+			entformdb.setList((String) result1.get("list"));
+
+			//移し替えたデータを持ったentformdbを、resultDB2に入れる
+			resultDb2.add(entformdb);
+		}
+
+		//Controllerに渡す
+		return resultDb2;
+	}
 
 	//更新の実行(UPDATE)
 	public void updateDb(Long id, EntForm entform) {
