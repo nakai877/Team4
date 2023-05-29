@@ -22,8 +22,8 @@ public class SampleDao {
 	public void insertDb(EntForm entform) {
 		db.update("INSERT INTO sample (name, list) VALUES(?, ?)", entform.getName(), entform.getList());
 	}
-	
-	public List<EntForm> searchDb(){
+
+	public List<EntForm> searchDb() {
 		String sql = "SELECT * FROM sample";
 
 		//データベースから取り出したデータをresultDB1に入れる
@@ -33,24 +33,24 @@ public class SampleDao {
 		List<EntForm> resultDb2 = new ArrayList<EntForm>();
 
 		//1件ずつピックアップ
-		for(Map<String,Object> result1:resultDb1) {
+		for (Map<String, Object> result1 : resultDb1) {
 
-		//データ1件分を1つのまとまりとしたEntForm型の「entformdb」を生成
-		EntForm entformdb = new EntForm();
+			//データ1件分を1つのまとまりとしたEntForm型の「entformdb」を生成
+			EntForm entformdb = new EntForm();
 
-		//id、nameのデータをentformdbに移す
-		entformdb.setId((int)result1.get("id"));
-		entformdb.setName((String)result1.get("name"));
-		entformdb.setList((String)result1.get("list"));
+			//id、nameのデータをentformdbに移す
+			entformdb.setId((int) result1.get("id"));
+			entformdb.setName((String) result1.get("name"));
+			entformdb.setList((String) result1.get("list"));
 
-		//移し替えたデータを持ったentformdbを、resultDB2に入れる
-		resultDb2.add(entformdb);
+			//移し替えたデータを持ったentformdbを、resultDB2に入れる
+			resultDb2.add(entformdb);
 		}
-		
+
 		//Controllerに渡す
 		return resultDb2;
 	}
-	
+
 	//削除(DELETE)
 	public void deleteDb(Long id) {
 		//コンソールに表示
@@ -58,44 +58,44 @@ public class SampleDao {
 		//DBからデータを削除
 		db.update("delete from sample where id=?", id);
 	}
-	
+
 	//更新画面の表示(SELECT)
-			public List<EntForm> selectOne(Long id) {
+	public List<EntForm> selectOne(Long id) {
 
-			//コンソールに表示
-			System.out.println("編集画面を出します");
-			
-			//データベースから目的の1件を取り出して、そのままresultDB1に入れる
-			List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM sample where id=?", id);
-			
-			//画面に表示しやすい形のList(resultDB2)を用意
-			List<EntForm> resultDb2 = new ArrayList<EntForm>();
+		//コンソールに表示
+		System.out.println("編集画面を出します");
 
-			//1件ずつピックアップ
-			for (Map<String, Object> result1 : resultDb1) {
-			
-				//データ1件分を1つのまとまりとするので、EntForm型の「entformdb」を生成
+		//データベースから目的の1件を取り出して、そのままresultDB1に入れる
+		List<Map<String, Object>> resultDb1 = db.queryForList("SELECT * FROM sample where id=?", id);
+
+		//画面に表示しやすい形のList(resultDB2)を用意
+		List<EntForm> resultDb2 = new ArrayList<EntForm>();
+
+		//1件ずつピックアップ
+		for (Map<String, Object> result1 : resultDb1) {
+
+			//データ1件分を1つのまとまりとするので、EntForm型の「entformdb」を生成
 			EntForm entformdb = new EntForm();
-			
+
 			//id、nameのデータをentformdbに移す
 			entformdb.setId((int) result1.get("id"));
 			entformdb.setName((String) result1.get("name"));
 			entformdb.setList((String) result1.get("list"));
-			
+
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
-			}
+		}
 
-				//Controllerに渡す
-				return resultDb2;
-			}
-			
-			//更新の実行(UPDATE)
-			public void updateDb(Long id, EntForm entform) {
-				//コンソールに表示
-				System.out.println("編集の実行");
-				//UPDATEを実行
-				db.update("UPDATE sample SET name = ?, list = ? WHERE id = ?",entform.getName(), entform.getList(), id);
-			}
+		//Controllerに渡す
+		return resultDb2;
+	}
+
+	//更新の実行(UPDATE)
+	public void updateDb(Long id, EntForm entform) {
+		//コンソールに表示
+		System.out.println("編集の実行");
+		//UPDATEを実行
+		db.update("UPDATE sample SET name = ?, list = ? WHERE id = ?", entform.getName(), entform.getList(), id);
+	}
 
 }

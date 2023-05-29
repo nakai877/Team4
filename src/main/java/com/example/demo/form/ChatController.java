@@ -31,6 +31,20 @@ public class ChatController {
 		return "add";
 		}
 	
+	
+	
+	
+	
+	//名簿一覧画面
+	public String roster(Model model) {
+		//Dao
+		return "roster";
+	}
+	
+	
+	
+	
+	
 	//確認画面
 	@RequestMapping("/confirm")
 	public String confirm(@Validated Input input, BindingResult result, Model model) {
