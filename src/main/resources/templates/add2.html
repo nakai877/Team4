@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hello</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<form method="get" action="#" th:action="@{/roster}" th:object="${input2}">
+
+		<p>名前：<input type="text" name="name" th:value="*{name}"></p>
+		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">エラーメッセージ</div>
+
+		<input type="submit" value="確定">
+
+	</form>
+
+</body>
+
+</html>
