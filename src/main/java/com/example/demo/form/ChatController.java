@@ -36,8 +36,12 @@ public class ChatController {
 	
 	
 	//名簿一覧画面
+	@RequestMapping("/roster")
 	public String roster(Model model) {
 		//Dao
+		List<EntForm> list = sampledao.searchDb();
+		model.addAttribute("dbList",list);
+		model.addAttribute("title","名簿一覧画面");
 		return "roster";
 	}
 	
