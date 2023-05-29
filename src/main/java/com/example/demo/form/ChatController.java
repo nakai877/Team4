@@ -38,6 +38,12 @@ public class ChatController {
 		return "add2";
 	}
 	
+	@RequestMapping("/p")
+	public String form(Model model,Input2 input2) {
+		model.addAttribute("title","プロフィール入力画面");
+		return "profile";
+	}
+	
 	
 	//名簿一覧画面
 	@RequestMapping("/roster")
@@ -65,6 +71,17 @@ public class ChatController {
 		model.addAttribute("title", "確認ページ");
 			return "confirm";
 		}
+	@RequestMapping("/confirm2")
+	public String confirm(@Validated Input2 input2, BindingResult result, Model model) {
+
+		if(result.hasErrors()) {
+		model.addAttribute("title","入力ページ");
+		return "profile";
+		}
+
+		model.addAttribute("title","確認ページ");
+		return "confirm2";
+	}
 	
 	private SampleDao sampledao = null;
 	private rosterDao rosterdao = null;
@@ -77,15 +94,34 @@ public class ChatController {
 	
 	//完了の処理
 	@RequestMapping("/complete")
-	public String complete(Model model, Input form) {
+	public String complete(Model model, Input input) {
 	
 		EntForm entform = new EntForm();
-		entform.setName(form.getName());
-		entform.setList(form.getList());
+		
+		entform.setName(input.getName());
+		entform.setList(input.getList());
+		
+		
 		sampledao.insertDb(entform);
 		
 			return "complete";
 	}
+	@RequestMapping("/complete2")
+	public String complete(Model model, Input2 input2) {
+	
+		EntForm2 entform = new EntForm2();
+		
+		entform.setName(input2.getName());
+		entform.setComment(input2.getComment());
+		entform.setYakusyoku(input2.getYakusyoku());
+		entform.setBusyo(input2.getBusyo());
+		entform.setSyumi(input2.getSyumi());
+		
+		rosterdao.insertDb(entform);
+		
+			return "complete2";
+	}
+	
 	
 	//削除(DELETE)
 		@RequestMapping("/del/{id}")

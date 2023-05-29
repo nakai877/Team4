@@ -92,15 +92,15 @@ public class rosterDao {
 			}
 
 //			//更新の実行(UPDATE)
-//			public void updateDb(Long id, EntForm2 ent) {
-//				//コンソールに表示
-//				System.out.println("編集の実行");
-//				//UPDATEを実行
-//				db.update("UPDATE form SET name = ?  WHERE id = ?", ent.getName(), id);
-//				db.update("UPDATE form SET comment = ?  WHERE id = ?", ent.getComment(), id);
-//				db.update("UPDATE form SET yakusyoku = ?  WHERE id = ?", ent.getYakusyoku(), id);
-//				db.update("UPDATE form SET busyo = ?  WHERE id = ?", ent.getBusyo(), id);
-//				db.update("UPDATE form SET syumi = ?  WHERE id = ?", ent.getSyumi(), id);
-//
-//			}
+			public void updateDb(Long id, EntForm2 ent) {
+				//コンソールに表示
+				System.out.println("編集の実行");
+				//UPDATEを実行
+				db.update("UPDATE form SET name = ?  WHERE id = ?", ent.getName(), id);
+				db.update("UPDATE form SET comment = ?  WHERE id = ?", ent.getComment(), id);
+				db.update("UPDATE form SET yakusyoku = ?  WHERE id = ?", ent.getYakusyoku(), id);
+				db.update("UPDATE form SET busyo = ?  WHERE id = ?", ent.getBusyo(), id);
+				db.update("UPDATE form SET syumi = ?  WHERE id = ?", ent.getSyumi(), id);
+
+			}
 }
