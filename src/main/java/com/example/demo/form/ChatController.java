@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dao.SampleDao;
+import com.example.demo.dao.rosterDao;
 import com.example.demo.entity.EntForm;
+import com.example.demo.entity.EntForm2;
 
 @Controller
 public class ChatController {
@@ -31,15 +33,17 @@ public class ChatController {
 		return "add";
 		}
 	
-	
-	
+	@RequestMapping("/add2")
+	public String add(Model model, Input2 input2) {
+		return "add2";
+	}
 	
 	
 	//名簿一覧画面
 	@RequestMapping("/roster")
-	public String roster(Model model) {
+	public String roster(Model model, Input2 input) {
 		//Dao
-		List<EntForm> list = sampledao.searchDb();
+		List<EntForm2> list = rosterdao.selectOne(input.getName());
 		model.addAttribute("dbList",list);
 		model.addAttribute("title","名簿一覧画面");
 		return "roster";
@@ -63,10 +67,12 @@ public class ChatController {
 		}
 	
 	private SampleDao sampledao = null;
+	private rosterDao rosterdao = null;
 
 	@Autowired
-	public void FormController(SampleDao sampledao) {
+	public void FormController(SampleDao sampledao, rosterDao rosterdao) {
 		this.sampledao = sampledao;
+		this.rosterdao = rosterdao;
 	}
 	
 	//完了の処理
