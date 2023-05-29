@@ -3,14 +3,28 @@ table {
 	border-collapse: collapse;
 }
 table th {
-	background: #77B1A1;
+	background:#8d9eb3;
 	border: solid 1px #ccc;
-	color: #4D4D4F;
+	border-bottom:solid 3px #696969;
+	color: #f0f8ff;
 	padding: 10px;
+	width:  100px;              /* 幅指定 */
+    height: 40px; 
+    text-align:  center;               
 }
 table td {
+	background:#e6e6fa;
 	border: solid 1px #ccc;
 	padding: 10px;
+	width:  150px;              /* 幅指定 */
+    height: 45px;               /* 高さ指定 */
+    text-align:  center; 
 }
 
+h1 {
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 4px #364e96;/*上線*/
+  border-bottom: solid 4px #364e96;/*下線*/
+}
 
