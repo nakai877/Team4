@@ -20,6 +20,7 @@
 			<th>名前</th>
 			<th>予定</th>
 			<th>削除</th>
+			<th>編集</th>
 			<th>詳細</th>
 		</tr>
 		<tr th:each="res : ${dbList}">
@@ -29,6 +30,16 @@
 			<td>
 				<form th:action="@{/del/{id}(id=${res.id})}">
 					<input type="submit" value="削除" />
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/edit/{id}(id=${res.id})}">
+					<input type="submit" value="編集" />
+				</form>
+			</td>
+			<td>
+				<form th:action="@{/form/{id}(id=${res.id})}">
+					<input type="submit" value="詳細" />
 				</form>
 			</td>
 		</tr>

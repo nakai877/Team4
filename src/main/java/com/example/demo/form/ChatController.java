@@ -69,5 +69,39 @@ public class ChatController {
 			sampledao.deleteDb(id);
 				return "redirect:/form";
 		}
+		
+		//更新画面の表示(SELECT)
+		@RequestMapping("/edit/{id}")
+		public String editView(@PathVariable Long id, Model model) {
+
+			//DBからデータを1件取ってくる(リストの形)
+			List<EntForm> list = sampledao.selectOne(id);
+
+			//リストから、オブジェクトだけをピックアップ
+			EntForm entformdb = list.get(0);
+
+			//スタンバイしているViewに向かって、データを投げる
+			model.addAttribute("form", entformdb);
+			model.addAttribute("title", "編集ページ");
+				return "edit";
+		}
+				
+		//更新処理(UPDATE)
+		@RequestMapping("/edit/{id}/exe")
+		public String editExe(@PathVariable Long id, Model model, Input form) {
+					
+			//フォームの値をエンティティに入れ直し
+			EntForm entform = new EntForm();
+			System.out.println(form.getName());//取得できているかの確認
+			System.out.println(form.getList());
+			entform.setName(form.getName());
+			entform.setList(form.getList());
+			
+			//更新の実行
+			sampledao.updateDb(id,entform);
+					
+			//一覧画面へリダイレクト
+			return "redirect:/form";
+		} 
 	
 }
