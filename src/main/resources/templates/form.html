@@ -32,8 +32,9 @@
 				</form>
 			</td>
 			<td>
-				<form th:action="@{/form/{id}(id=${res.id})}">
-					<input type="submit" value="詳細" />
+				<form th:action="@{/roster}" th:object="${input2}">
+					<input type="hidden" name="name" th:value="${res.name}">
+					<input type="submit" value="プロフィール"/>
 				</form>
 			</td>
 		</tr>
