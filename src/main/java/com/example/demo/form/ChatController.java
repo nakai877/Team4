@@ -19,7 +19,7 @@ import com.example.demo.entity.EntForm2;
 public class ChatController {
 
 	@RequestMapping("/form")
-	public String form(Model model) {
+	public String form(Model model,Input2 input2) {
 		model.addAttribute("title", "予定一覧ページ");
 		List<EntForm> list = sampledao.searchDb();
 		model.addAttribute("dbList", list);
@@ -39,7 +39,7 @@ public class ChatController {
 	}
 
 	@RequestMapping("/p")
-	public String form(Model model, Input2 input2) {
+	public String profile (Model model, Input2 input2) {
 		model.addAttribute("title", "プロフィール入力ページ");
 		return "profile";
 	}
