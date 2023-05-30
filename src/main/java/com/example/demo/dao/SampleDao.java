@@ -20,7 +20,7 @@ public class SampleDao {
 	}
 
 	public void insertDb(EntForm entform) {
-		db.update("INSERT INTO sample (name, list,date) VALUES(?, ?, ?)", entform.getName(), entform.getList(), entform.getDate());
+		db.update("INSERT INTO sample (name, list, date) VALUES(?, ?, ?)", entform.getName(), entform.getList(), entform.getDate());
 	}
 
 	public List<EntForm> searchDb() {
@@ -28,7 +28,7 @@ public class SampleDao {
 
 		//データベースから取り出したデータをresultDB1に入れる
 		List<Map<String, Object>> resultDb1 = db.queryForList(sql);
-
+		
 		//画面に表示しやすい形のList(resultDB2)を用意
 		List<EntForm> resultDb2 = new ArrayList<EntForm>();
 
@@ -42,6 +42,7 @@ public class SampleDao {
 			entformdb.setId((int) result1.get("id"));
 			entformdb.setName((String) result1.get("name"));
 			entformdb.setList((String) result1.get("list"));
+			entformdb.setDate((java.sql.Date) result1.get("date"));
 
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
@@ -81,6 +82,7 @@ public class SampleDao {
 			entformdb.setId((int) result1.get("id"));
 			entformdb.setName((String) result1.get("name"));
 			entformdb.setList((String) result1.get("list"));
+			entformdb.setDate((java.sql.Date) result1.get("date"));
 
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
@@ -107,6 +109,7 @@ public class SampleDao {
 			entformdb.setId((int) result1.get("id"));
 			entformdb.setName((String) result1.get("name"));
 			entformdb.setList((String) result1.get("list"));
+			entformdb.setDate((java.sql.Date) result1.get("date"));
 
 			//移し替えたデータを持ったentformdbを、resultDB2に入れる
 			resultDb2.add(entformdb);
@@ -121,7 +124,7 @@ public class SampleDao {
 		//コンソールに表示
 		System.out.println("編集の実行");
 		//UPDATEを実行
-		db.update("UPDATE sample SET name = ?, list = ? WHERE id = ?", entform.getName(), entform.getList(), id);
+		db.update("UPDATE sample SET name = ?, list = ?, date = ?, WHERE id = ?", entform.getName(), entform.getList(), entform.getDate(), id);
 	}
 
 }
