@@ -60,10 +60,13 @@ public class ChatController {
 	@RequestMapping("/confirm")
 	public String confirm(@Validated Input input, BindingResult result, Model model) {
 
+		System.out.println(input.getDate());
+
 		if (result.hasErrors()) {
 			model.addAttribute("title", "入力ページ");
 			return "add";
 		}
+		
 
 		model.addAttribute("title", "確認ページ");
 		return "confirm";
@@ -98,6 +101,7 @@ public class ChatController {
 
 		entform.setName(input.getName());
 		entform.setList(input.getList());
+		entform.setDate(input.getDate());
 
 		sampledao.insertDb(entform);
 

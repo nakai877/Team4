@@ -1,5 +1,7 @@
 package com.example.demo.form;
 
+import java.sql.Date;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
@@ -11,6 +13,9 @@ public class Input {
 	@NotBlank(message="文字を入力してください")
 	private String list;
 		
+	
+	private Date date;
+	
 	public Input() {
 	}
 
@@ -29,4 +34,13 @@ public class Input {
 	public void setList(String list) {
 		this.list = list;
 	}
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 }

@@ -12,14 +12,20 @@
 		<p th:text="*{name}"></p>
 		<p>『予定』</p>
 		<p th:text="*{list}"></p>
+		<p>『日付』</p>
+		<p th:text="*{date}"></p>
+		
+		
 		<form method="get" action="#" th:action="@{/add}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="list" th:value="*{list}">
+			<input type="hidden" name="date" th:value="*{date}">
 			<input type="submit" value="入力画面へ">
 		</form>
 		<form method="get" action="#" th:action="@{/complete}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="list" th:value="*{list}">
+			<input type="hidden" name="date" th:value="*{date}">
 			<input type="submit" value="完了画面へ">
 		</form>
 	</div>

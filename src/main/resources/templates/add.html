@@ -15,8 +15,10 @@
 		<p>1日の予定：<input type="text" name="list" th:value="*{list}"></p>
 		<div th:if="${#fields.hasErrors('list')}" th:errors="*{list}">エラーメッセージ</div>
 		
-		<input type="submit" value="確定">
+		<p>1日の予定：<input type="date" name="date" th:value="*{date}"></p>		
 		
+		<input type="submit" value="確定">
+
 	</form>
 	
 	
