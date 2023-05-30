@@ -20,7 +20,7 @@ public class SampleDao {
 	}
 
 	public void insertDb(EntForm entform) {
-		db.update("INSERT INTO sample (name, list) VALUES(?, ?)", entform.getName(), entform.getList());
+		db.update("INSERT INTO sample (name, list,date) VALUES(?, ?, ?)", entform.getName(), entform.getList(), entform.getDate());
 	}
 
 	public List<EntForm> searchDb() {
