@@ -157,6 +157,7 @@ public class ChatController {
 		System.out.println(form.getList());
 		entform.setName(form.getName());
 		entform.setList(form.getList());
+		entform.setDate(form.getDate());
 
 		//更新の実行
 		sampledao.updateDb(id, entform);
