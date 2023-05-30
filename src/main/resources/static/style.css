@@ -32,18 +32,14 @@ h1 {
 }
 
 input[type="submit"]{
-  color: #fff;
-  background-color: #eb6100;
-  border-bottom: 5px solid #b84c00;
-}
-input[type="submit"]{
   display: inline-block;
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
   text-decoration: none;
-  background: #668ad8;/*ボタン色*/
+  background: #ff9500;/*ボタン色*/
   color: #FFF;
-  border-bottom: solid 4px #627295;
+  border-bottom: solid 4px #b36800;
   border-radius: 3px;
+  border-top:#ff9500;
 }
 input[type="submit"]:active{
   /*ボタンを押したとき*/
