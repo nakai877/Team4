@@ -21,11 +21,11 @@
 			<p>『コメント』</p>
 		<p th:text="*{comment}"></p>
 <!--		<p>入力内容ここまで</p>-->
-		<form method="get" action="#" th:action="@{/profile}">
+		<form method="get" action="#" th:action="@{/p}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="busyo" th:value="*{busyo}">
 			<input type="hidden" name="yakusyoku" th:value="*{yakusyoku}">
-			<input type="hidden" name="syumi" th:vlue="*{syumi}">
+			<input type="hidden" name="syumi" th:value="*{syumi}">
 			<input type="hidden" name="comment" th:value="*{comment}">
 			<input type="submit" value="プロフィール入力画面へ">
 		</form>
