@@ -124,7 +124,7 @@ public class SampleDao {
 		//コンソールに表示
 		System.out.println("編集の実行");
 		//UPDATEを実行
-		db.update("UPDATE sample SET name = ?, list = ?, date = ?, WHERE id = ?", entform.getName(), entform.getList(), entform.getDate(), id);
+		db.update("UPDATE sample SET name = ?, list = ?, date = ? WHERE id = ?", entform.getName(), entform.getList(), entform.getDate(), id);
 	}
 
 }
