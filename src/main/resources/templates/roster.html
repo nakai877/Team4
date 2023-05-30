@@ -9,11 +9,10 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
-	
-	
-<!--	名簿表示-->
 
-		<table>
+
+	<!--	名簿表示-->
+	<table>
 		<tr>
 			<th>登録順番</th>
 			<th>名前</th>
@@ -29,14 +28,33 @@
 			<td th:text="${res.busyo}">部署</td>
 			<td th:text="${res.syumi}">趣味</td>
 			<td th:text="${res.comment}">コメント</td>
-			
+
 		</tr>
 	</table>
-　　<p>
-	<a href="http://localhost:8080/add2" target="_blank">検索フォームに戻る</a>
+
+
+	<!--	予定表示-->
+	<table>
+		<tr>
+			<th>登録順番</th>
+			<th>名前</th>
+			<th>予定</th>
+		</tr>
+		<tr th:each="res : ${dbList2}">
+			<td th:text="${res.id}">1</td>
+			<td th:text="${res.name}">名前</td>
+			<td th:text="${res.list}">予定</td>
+		</tr>
+	</table>
+
+
+
+	<p>
+		<a href="http://localhost:8080/add2" target="_blank">検索フォームに戻る</a>
 	</p>
 	<p>
-	<a href="http://localhost:8080/form" target="_blank">予定一覧画面に戻る</a>
+		<a href="http://localhost:8080/form" target="_blank">予定一覧画面に戻る</a>
 	</p>
 </body>
+
 </html>
