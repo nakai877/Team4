@@ -1,8 +1,59 @@
 @charset "UTF-8";
-table {
+table.aaa {
+	border-collapse: collapse; /*セルの線を重ねる*/
+	margin: 5px auto 20px;
+}
+table.aaa th {
+	background: #93bce6;
+	border: solid 1.5px #909090;
+	color: #4D4D4F;
+	padding: 5px;
+	width:  200px;              /* 幅指定 */
+    height: 70px;               /* 高さ指定 */
+    color: #494949;/*文字色*/
+    font-size: 17pt;
+    text-align:center;             
+}
+table.aaa td {
+	border: solid 1.5px #909090;
+	background: #eaf4ff;
+	padding: 10px;
+	width:  200px;              /* 幅指定 */
+    height: 70px;               /* 高さ指定 */
+    text-align:center;
+    font-size: 13pt;
+}
+
+table.aaa tr td:nth-of-type(1){
+		width:  9%;              /* 幅指定 */
+		text-align:right;
+	}
+	
+table.aaa tr td:nth-of-type(2){
+		width:  15%;              /* 幅指定 */
+	}
+	
+table.aaa tr td:nth-of-type(3){
+		width:  10%;              /* 幅指定 */
+	}
+	
+table.aaa tr td:nth-of-type(4){
+		width:  10%;              /* 幅指定 */
+	}
+	
+table.aaa tr td:nth-of-type(5){
+		width:  10%;              /* 幅指定 */
+	}
+	
+table.aaa tr td:nth-of-type(6){
+		width:  30%;              /* 幅指定 */
+	}
+
+table.bbb {
 	border-collapse: collapse; /*セルの線を重ねる*/
 }
-table th {
+
+table.bbb th {
 	background: #a9cc51;
 	border: solid 1.5px #909090;
 	color: #4D4D4F;
@@ -13,7 +64,7 @@ table th {
     font-size: 17pt;
     text-align:center;             
 }
-table td {
+table.bbb td {
 	border: solid 1.5px #909090;
 	background: #ffffd6;
 	padding: 10px;
@@ -29,23 +80,4 @@ h1 {
   background: #f4f4f4;/*背景色*/
   border-left: solid 10px #a9cc51;/*左線*/
   border-bottom: solid 3px #d7d7d7;/*下線*/
-}
-
-input[type="submit"]{
-  display: inline-block;
-  padding: 0.5em 2em;
-  text-decoration: none;
-  background: #ff9500;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #b36800;
-  border-radius: 3px;
-  border-top:#ff9500;
-  border-left:#ff9500;
-  border-right:#ff9500;
-}
-input[type="submit"]:active{
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
 }
