@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Hello</title>
+<title>プロフィール入力</title>
 <meta charset="utf-8" />
 <!--<link rel="stylesheet" th:href="@{/style.css}">-->
 </head>
@@ -25,5 +25,8 @@
 		<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">エラー</div>
 		<input type="submit" value="送信">
 	</form>
+	<p>
+	<a href="http://localhost:8080/add2" target="_blank">検索フォームに戻る</a>
+	</p>
 </body>
 </html>

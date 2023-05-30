@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Hello</title>
+<title>確認ページ</title>
 <meta charset="utf-8" />
 </head>
 <body>
 
 	<h1><span th:text="${title}"></span></h1>
 	<div th:object="${input}">
-		<p>入力内容ここから</p>
+		<p>『名前』</p>
 		<p th:text="*{name}"></p>
+		<p>『予定』</p>
 		<p th:text="*{list}"></p>
-		<p>入力内容ここまで</p>
 		<form method="get" action="#" th:action="@{/add}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="list" th:value="*{list}">

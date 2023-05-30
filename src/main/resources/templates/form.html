@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Hello</title>
+	<title>予定一覧</title>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
 	<h1><span th:text="${title}"></span></h1>
 	<p>
-		<a href="/form" th:href="@{/add}">予定入力画面へ</a>
+		<a href="/form" th:href="@{/add}">予定入力ページ</a>
 	</p>
 	<p>
-		<a href="/add2">名簿一覧</a>
-<!--		<a href="/form" th:href="@{/add}">名簿一覧</a>-->
+		<a href="/add2">名簿検索フォーム</a>
 	</p>
 	
 	<table>
