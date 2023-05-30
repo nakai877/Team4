@@ -6,13 +6,13 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-	<h1 th:text="検索フォーム"></h1>
+	<h1 th:text="ユーザー検索"></h1>
 	<form method="get" action="#" th:action="@{/roster}" th:object="${input2}">
 
 		<p>名前：<input type="text" name="name" th:value="*{name}"></p>
 		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">エラーメッセージ</div>
 
-		<input type="submit" value="確定">
+		<input type="submit" value="検索">
 
 	</form>
 <p>
