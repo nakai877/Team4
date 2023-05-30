@@ -1,0 +1,32 @@
+@charset "UTF-8";
+table {
+	border-collapse: collapse; /*セルの線を重ねる*/
+}
+
+h1 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 10px #a9cc51;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+input[type="submit"]{
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  background: #ff9500;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #b36800;
+  border-radius: 3px;
+  border-top:#ff9500;
+  border-left:#ff9500;
+  border-right:#ff9500;
+}
+
+input[type="submit"]:active{
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
