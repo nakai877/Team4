@@ -3,33 +3,6 @@ table {
 	border-collapse: collapse; /*セルの線を重ねる*/
 }
 table th {
-<<<<<<< HEAD
-	background:#8d9eb3;
-	border: solid 1px #ccc;
-	border-bottom:solid 3px #696969;
-	color: #f0f8ff;
-	padding: 10px;
-	width:  100px;              /* 幅指定 */
-    height: 40px; 
-    text-align:  center;               
-}
-table td {
-	background:#e6e6fa;
-	border: solid 1px #ccc;
-	padding: 10px;
-	width:  150px;              /* 幅指定 */
-    height: 45px;               /* 高さ指定 */
-    text-align:  center; 
-}
-
-h1 {
-  color: #364e96;/*文字色*/
-  padding: 0.5em 0;/*上下の余白*/
-  border-top: solid 4px #364e96;/*上線*/
-  border-bottom: solid 4px #364e96;/*下線*/
-}
-
-=======
 	background: #a9cc51;
 	border: solid 1.5px #909090;
 	color: #4D4D4F;
@@ -38,7 +11,7 @@ h1 {
     height: 70px;               /* 高さ指定 */
     color: #494949;/*文字色*/
     font-size: 17pt;
-    text-align:center;
+    text-align:center;             
 }
 table td {
 	border: solid 1.5px #909090;
@@ -78,4 +51,3 @@ input[type="submit"]:active{
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
 }
->>>>>>> oowtari
