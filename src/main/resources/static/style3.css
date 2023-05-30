@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 h1 {
   color: #364e96;/*文字色*/
   padding: 0.5em 0;/*上下の余白*/
   border-top: solid 4px #364e96;/*上線*/
   border-bottom: solid 4px #364e96;/*下線*/
+=======
+h1 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 10px #a9cc51;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+>>>>>>> oowtari
 }

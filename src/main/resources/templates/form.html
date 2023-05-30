@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1><span th:text="${title}"></span></h1>
+<<<<<<< HEAD
 	<p>
 		<a href="/form" th:href="@{/add}">予定入力ページ</a>
 	</p>
@@ -14,6 +15,8 @@
 		<a href="/add2">名簿検索フォーム</a>
 	</p>
 	
+=======
+>>>>>>> oowtari
 	<table>
 		<tr>
 			<th>登録順番</th>
@@ -29,7 +32,7 @@
 			<td th:text="${res.list}">予定</td>
 			<td>
 				<form th:action="@{/del/{id}(id=${res.id})}">
-					<input type="submit" value="削除" />
+					<input type="submit" value="削除" >
 				</form>
 			</td>
 			<td>
@@ -44,3 +47,12 @@
 			</td>
 		</tr>
 	</table>
+	
+	<p>
+		<a href="/form" th:href="@{/add}">予定入力画面へ</a>
+	</p>
+	<p>
+		<a href="/add2">名簿一覧</a>
+<!--		<a href="/form" th:href="@{/add}">名簿一覧</a>-->
+	</p>
+	

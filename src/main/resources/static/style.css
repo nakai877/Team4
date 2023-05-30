@@ -1,8 +1,9 @@
 @charset "UTF-8";
 table {
-	border-collapse: collapse;
+	border-collapse: collapse; /*セルの線を重ねる*/
 }
 table th {
+<<<<<<< HEAD
 	background:#8d9eb3;
 	border: solid 1px #ccc;
 	border-bottom:solid 3px #696969;
@@ -28,3 +29,53 @@ h1 {
   border-bottom: solid 4px #364e96;/*下線*/
 }
 
+=======
+	background: #a9cc51;
+	border: solid 1.5px #909090;
+	color: #4D4D4F;
+	padding: 5px;
+	width:  200px;              /* 幅指定 */
+    height: 70px;               /* 高さ指定 */
+    color: #494949;/*文字色*/
+    font-size: 17pt;
+    text-align:center;
+}
+table td {
+	border: solid 1.5px #909090;
+	background: #ffffd6;
+	padding: 10px;
+	width:  200px;              /* 幅指定 */
+    height: 70px;               /* 高さ指定 */
+    text-align:center;
+    font-size: 13pt;
+}
+
+h1 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 10px #a9cc51;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+}
+
+input[type="submit"]{
+  color: #fff;
+  background-color: #eb6100;
+  border-bottom: 5px solid #b84c00;
+}
+input[type="submit"]{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+input[type="submit"]:active{
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+>>>>>>> oowtari
