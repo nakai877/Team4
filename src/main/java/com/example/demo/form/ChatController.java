@@ -50,7 +50,9 @@ public class ChatController {
 	public String roster(Model model, Input2 input) {
 		//Dao
 		List<EntForm2> list = rosterdao.selectOne(input.getName());
+		List<EntForm> list2 = sampledao.selectOne(input.getName());
 		model.addAttribute("dbList",list);
+		model.addAttribute("dbList2",list2);
 		model.addAttribute("title","名簿詳細画面");
 		return "roster";
 	}
