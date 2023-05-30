@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>プロフィール入力</title>
+<h1>プロフィール入力</h1>
 <meta charset="utf-8" />
-<!--<link rel="stylesheet" th:href="@{/style.css}">-->
+<link rel="stylesheet" th:href="@{/style_title.css}">
 </head>
 <body>
-	<h2 th:text="${title}"></h2>
 	<form method="get" action="#" th:action="@{/confirm2}" th:object="${input2}">
 		<p>名前：<input type="text" name="name" th:value="*{name}"></p>
 		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">エラー</div>

@@ -4,6 +4,7 @@
 <head>
 	<title>確認ページ</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style_title.css}">
 </head>
 
 <body>
@@ -29,6 +30,7 @@
 			<input type="hidden" name="comment" th:value="*{comment}">
 			<input type="submit" value="プロフィール入力画面へ">
 		</form>
+		<p></p>
 		<form method="get" action="#" th:action="@{/complete2}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="busyo" th:value="*{busyo}">

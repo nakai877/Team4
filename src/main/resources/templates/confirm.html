@@ -3,6 +3,7 @@
 <head>
 <title>確認ページ</title>
 <meta charset="utf-8" />
+<link rel="stylesheet" th:href="@{/style_title.css}">
 </head>
 <body>
 
@@ -22,6 +23,7 @@
 			<input type="hidden" name="date" th:value="*{date}">
 			<input type="submit" value="入力画面へ">
 		</form>
+		<p></p>
 		<form method="get" action="#" th:action="@{/complete}">
 			<input type="hidden" name="name" th:value="*{name}">
 			<input type="hidden" name="list" th:value="*{list}">
